@@ -23,7 +23,9 @@ Fecha de referencia: 2026-09-13.
 - El build frontend termina con una advertencia de chunk JavaScript mayor de 500 kB.
 - La ejecucion completa con Docker Compose y la integracion HTTP no estan cubiertas por las pruebas actuales.
 
-## Siguientes prioridades
+## Prioridades candidatas basadas en gaps
+
+Estas prioridades no son compromisos de roadmap. Cada una deriva de un gap listado arriba y debe confirmarse antes de planificar trabajo.
 
 1. Conectar en `frontend/src/App.tsx` los endpoints de resumen, facets, comparacion, alertas y segmentacion si forman parte del alcance de producto.
 2. Sustituir o encapsular `generate_mock_movements` con una fuente persistente y evitar mutar el generador global de `random`.

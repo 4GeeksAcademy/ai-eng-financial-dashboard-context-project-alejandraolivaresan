@@ -1,7 +1,9 @@
 # Overview del producto
 
 ## Producto
-Financial Metrics Dashboard: dashboard web para consultar y visualizar movimientos financieros, ingresos, egresos, beneficio y porcentaje de beneficio.
+Financial Metrics Dashboard: dashboard web documentado en `README.md` para visualizar movimientos financieros, ingresos, egresos, beneficio y porcentaje de beneficio.
+
+Este documento describe únicamente capacidades observadas en el código y la documentación del repositorio; no constituye un roadmap ni confirma capacidades no implementadas.
 
 ## Evidencia verificable
 
@@ -15,3 +17,4 @@ Financial Metrics Dashboard: dashboard web para consultar y visualizar movimient
 
 - La pantalla principal solo consume `/api/metrics`; los endpoints de facets, resumen, categorias, comparacion, alertas, B2B y B2C no tienen consumidores en `frontend/src/App.tsx`.
 - Los datos backend son mock generados por `generate_mock_movements(seed=42)` en cada request; no hay persistencia ni almacenamiento de movimientos en el repositorio.
+- No se afirma que los endpoints no consumidos por `frontend/src/App.tsx` formen parte de la experiencia disponible; su existencia en `backend/app/routes.py` solo prueba que están implementados en la API.
