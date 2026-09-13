@@ -170,6 +170,18 @@ def test_metrics_comparison_returns_delta_fields():
     }
 
 
+def test_metrics_comparison_rejects_inverted_date_range():
+    response = client.get(
+        "/api/metrics/comparison",
+        params={"start_date": "2025-03-31", "end_date": "2025-03-01"},
+    )
+
+    assert response.status_code == 400
+    assert response.json() == {
+        "detail": "start_date must be on or before end_date"
+    }
+
+
 def test_metrics_alerts_returns_anomaly_candidates():
     response = client.get(
         "/api/metrics/alerts",

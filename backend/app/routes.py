@@ -5,7 +5,7 @@ from collections import defaultdict
 from datetime import date, timedelta
 from typing import Literal
 
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel
 
 OperationType = Literal["income", "outcome"]
@@ -308,6 +308,12 @@ def get_metrics_comparison(
     end_date: date = Query(...),
     business_type: BusinessType | None = Query(default=None),
 ) -> MetricsComparison:
+    if start_date > end_date:
+        raise HTTPException(
+            status_code=400,
+            detail="start_date must be on or before end_date",
+        )
+
     movements = generate_mock_movements(seed=42)
     if business_type is not None:
         movements = [
