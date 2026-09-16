@@ -1,5 +1,10 @@
 # Rastro de verificación
 
+Fecha: 2026-09-16
+
+- Se contrastó el wording de producto con los campos y valores reales de `backend/app/routes.py`; los desajustes quedaron resueltos en `frontend/specs/api-wording-alignment.md`, sin cambios en la implementación.
+- Verificación documental: `git diff --check` -> sin errores de whitespace.
+
 Fecha: 2026-09-12
 
 - Frontend: `cd frontend && npm run test -- --run` -> 5 tests pasados.
